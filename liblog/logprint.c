@@ -164,10 +164,7 @@ static android_LogPriority filterPriForTag(
 int android_log_shouldPrintLine (
         AndroidLogFormat *p_format, const char *tag, android_LogPriority pri)
 {
-    if (!strncmp(tag, "AEC_PORT", 8))
-        return 0;
-    else
-        return pri >= filterPriForTag(p_format, tag);
+    return pri >= filterPriForTag(p_format, tag);
 }
 
 AndroidLogFormat *android_log_format_new()
